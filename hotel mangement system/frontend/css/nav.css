@@ -1,0 +1,61 @@
+.navbar{
+    height: 55px;
+    display:flex;
+    justify-content: space-between;
+    background-color:blanchedalmond;
+    position: fixed;
+    z-index: 1;
+    
+}
+
+.left-section{
+    width: 250px;
+    font-family:lobster;
+    font-weight: bold;
+    font-size: 30px;
+    color:rgb(110, 43, 16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.middle-section{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    width:900px;
+    margin-left:20px;
+    margin-right:30px;
+    display:flex;
+    flex-direction:row;
+    list-style-type: none;
+    align-items:center;
+    justify-content: space-between;
+    
+    
+    
+
+    
+}
+
+.middle-section a{
+    text-decoration: none;
+    color:rgb(120, 65, 65);
+}
+
+.right-section{
+    width:150px;
+    list-style-type: none;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+}
+
+.right-section a{
+    text-decoration: none;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color:rgb(120, 65, 65);
+    
+}
