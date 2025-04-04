@@ -20,6 +20,7 @@
 }
 
 
+
 .middle-section{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 700;
@@ -31,11 +32,7 @@
     list-style-type: none;
     align-items:center;
     justify-content: space-between;
-    
-    
-    
-
-    
+      
 }
 
 .middle-section a{
@@ -58,4 +55,8 @@
     font-weight: bold;
     color:rgb(120, 65, 65);
     
+}
+a{
+    text-decoration: none;
+    color: rgb(120, 65, 65);
 }
