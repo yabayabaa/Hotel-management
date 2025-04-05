@@ -5,6 +5,7 @@
     background-color:blanchedalmond;
     position: fixed;
     z-index: 1;
+
     
 }
 
@@ -49,7 +50,7 @@
 }
 
 .right-section{
-    width:150px;
+    width:100px;
     list-style-type: none;
     display:flex;
     align-items:center;

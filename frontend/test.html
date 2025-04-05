@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Amrit</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/swiper.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Reset & General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background-color: #fff8f0;
+      padding: 0 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .left-section {
+      font-family: 'Lobster', cursive;
+      font-size: 28px;
+      color: #6e2b10;
+    }
+    .middle-section {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    .middle-section li a {
+      font-weight: 600;
+      color: #784141;
+      transition: color 0.3s;
+    }
+    .middle-section li a:hover {
+      color: #6e2b10;
+    }
+    .right-section a {
+      font-weight: bold;
+      color: #784141;
+      padding: 8px 12px;
+      border: 1px solid #784141;
+      border-radius: 4px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .right-section a:hover {
+      background-color: #784141;
+      color: #fff;
+    }
+    /* Hero Section */
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 60px; /* to offset the fixed navbar */
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%);
+      transition: transform 0.5s;
+    }
+    .image-container img:hover {
+      transform: scale(1.05);
+    }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+    }
+    .centered h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .button {
+      background-color: #f52e2e;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #d12b2b;
+    }
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .welcome-section {
+      background-color: #f9f9f9;
+    }
+    .welcome-section h1 {
+      font-size: 3rem;
+      color: #6e2b10;
+      margin-bottom: 10px;
+    }
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      color: #784141;
+      margin-bottom: 20px;
+    }
+    .welcome-description {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #34495e;
+    }
+    .about-section {
+      background-color: #fff;
+    }
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    .about-text h2 {
+      font-size: 2.5rem;
+      color: #6e2b10;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    .about-text h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 50px;
+      height: 3px;
+      background-color: #784141;
+      transition: width 0.3s;
+    }
+    .about-text h2:hover::after {
+      width: 70px;
+    }
+    .about-text .subtitle {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+    .about-text .description {
+      font-size: 1rem;
+      color: #34495e;
+      line-height: 1.6;
+    }
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .about-image img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s;
+    }
+    .about-image:hover img {
+      transform: scale(1.05);
+    }
+    /* Swiper Slider */
+    .swiper {
+      width: 100%;
+      padding: 60px 0;
+      background-color: #f9f9f9;
+    }
+    .swiper-slide {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .swiper-slide .imagebox {
+      position: relative;
+      overflow: hidden;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s;
+    }
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+    .card-info {
+      padding: 20px;
+      text-align: left;
+    }
+    .card-info h2 {
+      font-size: 1.5rem;
+      color: #6e2b10;
+      margin-bottom: 10px;
+    }
+    .card-info p {
+      font-size: 1rem;
+      color: #34495e;
+      margin-bottom: 10px;
+    }
+    .card-info button {
+      background-color: #f52e2e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .card-info button:hover {
+      background-color: #d12b2b;
+    }
+    /* Footer */
+    .footer {
+      background-color: #7a0a0a;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 250px;
+    }
+    .footer-about h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .footer-about p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .footer-socials a img {
+      width: 24px;
+      margin-right: 10px;
+    }
+    .footer-links h3,
+    .footer-contact h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .footer-links hr,
+    .footer-contact hr {
+      width: 50px;
+      border: 1px solid #fff;
+      margin-bottom: 10px;
+    }
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-links ul li {
+      margin-bottom: 6px;
+    }
+    .footer-links ul li a:hover {
+      text-decoration: underline;
+    }
+    .footer-contact p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .middle-section {
+        display: none;
+      }
+      .about-container {
+        flex-direction: column;
+      }
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="left-section">
+      <a href="index.html">Hotel Amrit</a>
+    </div>
+    <ul class="middle-section">
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="#">Dining</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <div class="right-section">
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <header class="image-container">
+    <img src="images/dining.jpg" alt="Hotel Amrit" />
+    <div class="centered">
+      <h1>Book your next Hotel</h1>
+      <button class="button">Book Now</button>
+    </div>
+  </header>
+  
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <h1>Welcome to</h1>
+    <h2>Hotel Amrit</h2>
+    <p class="welcome-description">
+      Discover our story and passion for exceptional dining and hospitality.
+      Hotel Amrit offers luxurious rooms, exquisite dining, and world-class amenities,
+      ensuring a refined stay tailored for the discerning traveler.
+    </p>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Rooms</h2>
+        <p class="subtitle">Experience elegance and comfort.</p>
+        <p class="description">
+          Enjoy our beautifully appointed rooms designed for comfort and style.
+          Each room features modern amenities, elegant décor, and a serene ambiance.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/hotel2.jpg" alt="Hotel Interior" />
+      </div>
+    </div>
+  </section>
+  
+  <!-- Swiper Slider Section -->
+  <section class="swiper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="imagebox">
+            <img src="images/dining.jpg" alt="Elegant Dining" />
+          </div>
+          <div class="card-info">
+            <h2>Elegant Dining</h2>
+            <p>Experience fine dining with a blend of traditional and modern cuisine.</p>
+            <button>Learn More</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="imagebox">
+            <img src="images/room1.jpg" alt="Luxurious Room" />
+          </div>
+          <div class="card-info">
+            <h2>Luxurious Rooms</h2>
+            <p>Spacious rooms with premium amenities and personalized service.</p>
+            <button>Learn More</button>
+          </div>
+        </div>
+      </div>
+      <!-- Pagination & Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h2><i class="fa-solid fa-hotel"></i> Hotel Amrit</h2>
+        <p>
+          Experience comfort and tranquility at Hotel Amrit, just a 5-min walk from Boudha Stupa.
+          Every stay supports a meaningful cause.
+        </p>
+        <div class="footer-socials">
+          <a href="#"><img src="whatsapp-icon.png" alt="WhatsApp" /></a>
+          <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
+          <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /></a>
+          <a href="#"><img src="tripadvisor-icon.png" alt="Tripadvisor" /></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Important Links</h3>
+        <hr />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="#">Events & Banquet</a></li>
+          <li><a href="#">Swimming Pool</a></li>
+          <li><a href="#">Yoga & Meditation</a></li>
+          <li><a href="#">Dining</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Details</h3>
+        <hr />
+        <p>📍 Kathmandu, Nepal</p>
+        <p>📞 9765964209, 9768380546</p>
+        <p>📧 sales@hotelamrit.com</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
