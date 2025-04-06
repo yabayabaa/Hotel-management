@@ -1,62 +1,7 @@
-body {
+html {
+  font-family: "Playfair Display", serif;
   margin: 0;
-}
-
-.navbar {
-  height: 55px;
-  display: flex;
-  justify-content: space-between;
-  background-color: blanchedalmond;
-  position: fixed;
-  z-index: 1;
-}
-
-.left-section {
-  width: 250px;
-  font-family: lobster;
-  font-weight: bold;
-  font-size: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.left-section a {
-  text-decoration: none;
-  color: rgb(110, 43, 16);
-}
-
-.middle-section {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 700;
-  width: 900px;
-  margin-left: 20px;
-  margin-right: 30px;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.middle-section a {
-  text-decoration: none;
-  color: rgb(120, 65, 65);
-}
-
-.right-section {
-  width: 150px;
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right-section a {
-  text-decoration: none;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: bold;
-  color: rgb(120, 65, 65);
+  padding: 0;
 }
 
 .image-container img {
@@ -89,102 +34,6 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: top;
-}
-
-/* Welcome section */
-.welcome-section {
-  padding: 20px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.welcome-description {
-  font-size: 1.5rem;
-  color: #34495e;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* About Section Styles */
-.about-section {
-  padding: 20px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 280px;
-  padding: 20px;
-  animation: fadeInLeft 1s ease-out;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  color: rgb(110, 43, 16);
-  margin-bottom: 15px;
-  font-weight: 700;
-  position: relative;
-}
-
-.about-text h2::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 3px;
-  background-color: rgb(120, 65, 65);
-  transition: width 0.3s ease;
-}
-
-.about-text h2:hover::after {
-  width: 70px;
-}
-
-.about-text .subtitle {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.about-text .description {
-  font-size: 1rem;
-  color: #34495e;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.about-image {
-  flex: 1;
-  min-width: 280px;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  animation: fadeInRight 1s ease-out;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-  border-radius: 15px;
-}
-
-.about-image:hover img {
-  transform: scale(1.05);
 }
 
 /* Footer section */
@@ -263,4 +112,16 @@ body {
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.6;
+}
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0%);
+  transition: display 0.7s allow-discrete, overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+dialog::backdrop {
+  background-color: rgba(130, 130, 130, 0) !important;
+  transition: display 0.7s allow-discrete, overlay 0.7s allow-discrete,
+    background-color 0.7s;
 }

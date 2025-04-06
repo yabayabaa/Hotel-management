@@ -14,7 +14,7 @@ body {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 350px;
   text-align: center;
 }
 
@@ -57,6 +57,74 @@ body {
   background-color: #574b90;
 }
 #login-form > #error-msg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#register-form {
+  background-color: #ffffffcc;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  text-align: center;
+}
+
+#register-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#register-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  color: #444;
+}
+
+#register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#register-form > span > span {
+  & > label {
+    margin-bottom: auto;
+  }
+  & > input[type="radio"] {
+    box-sizing: border-box;
+    font-size: 14px;
+    width: inherit;
+    padding: inherit;
+    margin-bottom: inherit;
+    border: inherit;
+    border-radius: inherit;
+  }
+}
+#register-form-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#register-form-button:hover {
+  background-color: #574b90;
+}
+#register-form > #error-msg {
   color: red;
   font-size: 14px;
   margin-bottom: 10px;

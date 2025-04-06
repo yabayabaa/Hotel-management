@@ -3,10 +3,109 @@
   <head>
     <title>Reyansh Hotel</title>
     <description></description>
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/swiper.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/swiper.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/output.css" />
+    <style>
+      /* Welcome section */
+      .welcome-section {
+        padding: 20px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      .welcome-description {
+        font-size: 1.5rem;
+        color: #34495e;
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      /* About Section Styles */
+      .about-section {
+        padding: 20px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      .about-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .about-text {
+        flex: 1;
+        min-width: 280px;
+        padding: 20px;
+        animation: fadeInLeft 1s ease-out;
+      }
+
+      .about-text h2 {
+        font-size: 2.5rem;
+        color: rgb(110, 43, 16);
+        margin-bottom: 15px;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .about-text h2::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: rgb(120, 65, 65);
+        transition: width 0.3s ease;
+      }
+
+      .about-text h2:hover::after {
+        width: 70px;
+      }
+
+      .about-text .subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 20px;
+        font-style: italic;
+      }
+
+      .about-text .description {
+        font-size: 1rem;
+        color: #34495e;
+        line-height: 1.6;
+        text-align: left;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 280px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeInRight 1s ease-out;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+        border-radius: 15px;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+    </style>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -15,14 +114,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-    </style>
   </head>
 
   <body>
-    <div class="navbar">
-      <div class="left-section"><a href="index.html">Reyansh Hotel</a></div>
+    <nav class="navbar">
+      <div class="left-section">
+        <a href="index.html">Reyansh</a>
+      </div>
       <div class="middle-section">
         <li><a href="rooms.html">Rooms</a></li>
         <li><a href="#">Dining</a></li>
@@ -32,8 +130,9 @@
       </div>
       <div class="right-section">
         <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
       </div>
-    </div>
+    </nav>
     <div class="image-container">
       <img src="images/dining.jpg" />
     </div>
@@ -151,9 +250,9 @@
         <div class="footer-about">
           <h2><i class="fa-solid fa-hotel"></i> Reyansh Hotel</h2>
           <p>
-            Experience comfort and tranquility at <strong>Reyansh Hotel</strong>,
-            5 min walk from Boudha Stupa, where every stay supports a meaningful
-            cause.
+            Experience comfort and tranquility at
+            <strong>Reyansh Hotel</strong>, 5 min walk from Boudha Stupa, where
+            every stay supports a meaningful cause.
           </p>
           <div class="footer-socials">
             <a href="#"><img src="whatsapp-icon.png" alt="WhatsApp" /></a>

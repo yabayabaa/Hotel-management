@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <title>Reyansh Hotel</title>
     <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/output.css" />
   </head>
   <body>
     <form id="login-form" method="post">
-      <h1>Login</h1>
+      <h1 class="text-2xl font-bold">Login</h1>
       <label for="username">Username</label>
       <input
         id="username"
@@ -26,7 +27,7 @@
         required
       />
       <button id="login-form-button" type="submit">Login</button>
-      <p id="error-msg" class="error-message"></p>
+      <a class="relative inline-block mt-5 underline hover:text-blue-800" href="register.html">Don't have an account? Register here</a>
     </form>
     <script type="module" src="js/login.js"></script>
   </body>
