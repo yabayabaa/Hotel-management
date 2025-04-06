@@ -19,8 +19,6 @@
     justify-content: center;
 }
 
-
-
 .middle-section{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: 700;
@@ -49,14 +47,39 @@
 
 }
 
+.right-section button{
+    background-color: blanchedalmond;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-weight: 700;
+    color: rgb(110, 43, 16);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+
+}
 .right-section a{
     text-decoration: none;
    font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     color:rgb(120, 65, 65);
-    
+ }
+
+.right-section .content{
+    display:none;
+    position: absolute;
+    background-color: lightgray;
+    min-width: 100px;
+    min-height: 40px;
+    box-shadow: 2px 2px 5px hsla(0,0%,0%,0.8);
+    margin-top: 95px;
 }
-a{
-    text-decoration: none;
-    color: rgb(120, 65, 65);
+.right-section:hover .content {
+    display: block;  
+}
+.right-section:hover button{
+    background-color: none;
+    color: rgb(220, 65, 65);
+    border-radius: 5px;
+    transition: 0.3s;
 }
