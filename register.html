@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register | Reyansh Hotel</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body>
+    <form id="register-form" method="post">
+      <h1 class="text-2xl font-bold">Register</h1>
+
+      <label for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="john.doe@gmail.com"
+        required
+      />
+      <label for="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        placeholder="JohnDoe"
+        required
+      />
+
+      <label for="first_name">First name</label>
+      <input
+        id="first_name"
+        name="first_name"
+        type="text"
+        placeholder="John"
+        required
+      />
+      <label for="last_name">Last_name</label>
+      <input id="last_name" name="last_name" type="text" placeholder="Doe" />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+        required
+      />
+      <span class="flex items-center gap-x-2 py-4">
+        <span class="flex items-center gap-x-1">
+          <input type="radio" id="customer" name="role" value="customer" />
+          <label for="customer">Customer</label>
+        </span>
+        <span class="flex items-center gap-x-1">
+          <input type="radio" id="staff" name="role" value="CSS" />
+          <label for="staff">Staff</label><br />
+        </span>
+      </span>
+      <button id="login-form-button" type="submit">Login</button>
+      <a
+        class="relative inline-block mt-5 underline hover:text-blue-800"
+        href="login.html"
+        >Already have an account? Login here</a
+      >
+    </form>
+    <script type="module" src="js/register.js"></script>
+  </body>
+</html>
