@@ -25,3 +25,13 @@ export function toast(status, message) {
     onClick: function () {}, // Callback after click
   }).showToast();
 }
+
+export function setMinDate(el) {
+  let now = new Date();
+
+  let day = ("0" + now.getDate()).slice(-2);
+  let month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+  let today = now.getFullYear() + "-" + month + "-" + day;
+  el.setAttribute("min", today);
+}

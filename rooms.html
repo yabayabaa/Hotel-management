@@ -182,16 +182,15 @@
                       class="edit-dialog bg-transparent border-none outline-0 shadow-none p-16 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-lg"
                       style="font-family: 'Merriweather Sans', sans-serif"
                       id="room-${id}"
-                      open
                     >
                       <form
                         method="POST"
                         name="edit-form"
                         class="flex flex-col gap-3 relative p-4 bg-[blanchedalmond] border border-orange-900 rounded-lg"
-                        room-id="${id}}"
+                        data-id="${id}}"
                       >
                         <span
-                          room-id="${id}}"
+                          data-id="${id}}"
                           class="close-btn rounded-circle flex items-center justify-center absolute bg-red-600 text-white rounded-tr-lg cursor-pointer"
                           style="
                             top: 1px;
@@ -247,7 +246,8 @@
                       </form>
                     </dialog>
                     <button
-                      class="bg-blue-500 text-white py-1 px-2 inline-flex items-center rounded-sm"
+                      data-id="${id}"
+                      class="book-now-btn cursor-pointer bg-blue-500 text-white py-1 px-2 inline-flex items-center rounded-sm"
                     >
                       Book now
                     </button>
@@ -257,6 +257,7 @@
             </div>
           </div>
         </div>
+
       </section>
 
       <!-- Rooms -->
