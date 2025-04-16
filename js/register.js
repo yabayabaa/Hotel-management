@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "./utils";
-import Cookies from "js-cookie";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#register-form");

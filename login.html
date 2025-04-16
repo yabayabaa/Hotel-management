@@ -15,6 +15,7 @@
         name="username"
         type="text"
         placeholder="Enter your username"
+        autocomplete="given-name"
         required
       />
 
@@ -24,11 +25,17 @@
         name="password"
         type="password"
         placeholder="Enter your password"
+        autocomplete="current-password"
         required
       />
       <button id="login-form-button" type="submit">Login</button>
-      <a class="relative inline-block mt-5 underline hover:text-blue-800" href="register.html">Don't have an account? Register here</a>
+      <a
+        class="relative inline-block mt-5 underline hover:text-blue-800"
+        href="register.html"
+        >Don't have an account? Register here</a
+      >
     </form>
-    <script type="module" src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

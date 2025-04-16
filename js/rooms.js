@@ -1,44 +1,18 @@
 import axios from "axios";
 import { toast } from "./utils";
-import Cookies from "js-cookie";
 
 async function getRooms() {
-  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/rooms`);
+  const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/rooms`, {
+    withCredentials: true,
+  });
   return res.data;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  //   const form = document.querySelector("#register-form");
-  //   form.addEventListener("submit", async (e) => {
-  //     e.preventDefault();
-  //     const formdata = new FormData(form);
-  //     try {
-  //       const res = await axios.post(
-  //         `${import.meta.env.VITE_BACKEND_URL}/auth/register`,
-  //         formdata,
-  //         {
-  //           headers: {
-  //             "Content-Type": "multipart/form-data",
-  //           },
-  //         }
-  //       );
-  //       const data = res.data;
-  //       toast("success", data.message);
-  //       setTimeout(() => {
-  //         window.location.href = "/login";
-  //       }, 2000);
-  //     } catch (error) {
-  //       if (error.response) {
-  //         console.log("Status:", error.response.status);
-  //         toast("error", error.response.data?.message || "Unknown error");
-  //       } else {
-  //         toast("error", "Network error or server not responding");
-  //       }
-  //     }
-  //   });
   const roomContainer = document.querySelector("#rooms-container");
   try {
     let rooms = getRooms();
+    console.log(rooms);
     rooms.then((res) => {
       try {
         res.data?.map((room) => {
@@ -55,13 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(error);
       }
     });
-    // document.querySelectorAll(".book-now-btn").forEach((btn) => {
-    //   btn.addEventListener("click", (e) => {
-    //     console.log(e);
-    //     const roomId = btn.dataset.id;
-    //     console.log(roomId);
-    //   });
-    // });
     document.addEventListener("click", function (e) {
       if (
         e.target.classList.contains("book-now-btn") ||
@@ -82,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const form = dialog.querySelector(".book-form");
           form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const user = axios.get(
+            const user = await axios.get(
               `${import.meta.env.VITE_BACKEND_URL}/users/me`,
               {
                 withCredentials: true,
@@ -90,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             const formdata = new FormData(form);
             formdata.append("reserved_room", roomId);
-            formdata.append("booked_by");
+            formdata.append("booked_by", user.data.id);
             try {
               const res = await axios.post(
                 `${import.meta.env.VITE_BACKEND_URL}/reservations`,

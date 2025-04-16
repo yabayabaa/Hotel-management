@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toast } from "./utils";
-import Cookies from "js-cookie";
+console.log("Hello");
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("#login-form");
@@ -16,12 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
+          withCredentials: true,
         }
       );
-      const data = res.data;
-      Cookies.set("jwt", data.jwt, { expires: 1, path: "/", secure: true });
-
-      toast("success", data.message);
+      toast("success", res.data.message);
       setTimeout(() => {
         window.location.href = "/";
       }, 2000);
@@ -31,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toast("error", error.response.data?.message || "Unknown error");
       } else {
         toast("error", "Network error or server not responding");
-        console.log("");
+        console.log(error);
       }
     }
   });
